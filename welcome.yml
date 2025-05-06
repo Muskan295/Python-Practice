@@ -1,0 +1,19 @@
+name: welcome new contributors
+
+on:
+
+         pull_request_target:
+           types: [opened]
+
+jobs:
+     greet:
+          runs-on: ubantu-latest
+          steps:
+            - name: greet the contributor
+              uses: actions/first-interaction0v1
+              with:
+                 repo-taken: ${{ secrets.GITHUB_TOKEN}}
+                 pr-message: |
+                      thanks for opening the pull request|
+                      we are happy to have your contribution.
+
